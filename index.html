@@ -13,7 +13,7 @@
       return moves[Math.floor(Math.random() * 3)]
     }
 
-    function round(playerSelection, computerSelection){
+    function Playround(playerSelection, computerSelection){
       playerSelection = playerSelection.toLowerCase();
       computerSelection = computerPlay().toLowerCase();
 
@@ -31,6 +31,27 @@
     }
 
     function game(playerSelection){
+      let playerScore = 0;
+      let computerScore = 0;
+      playerSelection = prompt("What's your move?")
+
+      for(let i = 0; i < 5; i++){
+        let roundResult = Playround(playerSelection);
+        console.log(roundResult);
+        if(roundResult.includes('won')){
+          playerScore++
+        }else if(roundResult.includes('lost')){
+          computerScore++
+        }
+      }
+
+      if(playerScore > computerScore){
+        console.log('You defeated the computer!!')
+      }else if(playerScore < computerScore){
+        console.log('You lost to the computer!!')
+      }else{
+        console.log('it is a draw!!')
+      }
 
     }
   </script>
