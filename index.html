@@ -13,7 +13,26 @@
       return moves[Math.floor(Math.random() * 3)]
     }
 
-    console.log(computerPlay())
+    function round(playerSelection, computerSelection){
+      playerSelection = playerSelection.toLowerCase();
+      computerSelection = computerPlay().toLowerCase();
+
+      if(playerSelection === computerSelection){
+        return "it's a tie!"
+      }else if(
+        (playerSelection === 'rock' && computerSelection === 'scissors')||
+        (playerSelection === 'paper' && computerSelection === 'rock')||
+        (playerSelection === 'scissors' && computerSelection === 'paper')
+      ){
+        return `${playerSelection} beats ${computerSelection}. You won the round!`
+      }else{
+        return `${computerSelection} beats ${playerSelection}. You lost the round!`
+      }
+    }
+
+    function game(playerSelection){
+
+    }
   </script>
   
 </body>
