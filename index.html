@@ -7,6 +7,9 @@
   <title>Document</title>
 </head>
 <body>
+  <h2 id="playerScore"></h2>
+  <h2 id="computerScore"></h2>
+  <h2 id="roundNumber"></h2>
   <script>
     function computerPlay(){
       const moves = ['Rock', 'Paper', 'Scissors'];
@@ -30,12 +33,18 @@
       }
     }
 
-    function game(playerSelection){
-      let playerScore = 0;
-      let computerScore = 0;
-      playerSelection = prompt("What's your move?")
+    let playerScore = 0;
+    let computerScore = 0;
 
-      for(let i = 0; i < 5; i++){
+    document.getElementById('playerScore').innerHTML = `Player score: ${playerScore}`;
+    document.getElementById('computerScore').innerHTML = `Computer score: ${computerScore}`;
+
+
+    function game(playerSelection){
+  
+      for(let i = 1; i <= 5; i++){
+        document.getElementById('roundNumber').innerHTML = `Round number: ${i}`
+        playerSelection = prompt("What's your move?")
         let roundResult = Playround(playerSelection);
         console.log(roundResult);
         if(roundResult.includes('won')){
@@ -54,6 +63,8 @@
       }
 
     }
+
+    game()
   </script>
   
 </body>
