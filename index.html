@@ -10,6 +10,7 @@
   <h2 id="playerScore"></h2>
   <h2 id="computerScore"></h2>
   <h2 id="roundNumber"></h2>
+  <h2 id="finalResult"></h2>
   <script>
     function computerPlay(){
       const moves = ['Rock', 'Paper', 'Scissors'];
@@ -33,33 +34,42 @@
       }
     }
 
-    let playerScore = 0;
-    let computerScore = 0;
-
-    document.getElementById('playerScore').innerHTML = `Player score: ${playerScore}`;
-    document.getElementById('computerScore').innerHTML = `Computer score: ${computerScore}`;
-
-
     function game(playerSelection){
-  
+      debugger
+      let playerScore = 0;
+      let computerScore = 0;
+
+     
+      
+
       for(let i = 1; i <= 5; i++){
-        document.getElementById('roundNumber').innerHTML = `Round number: ${i}`
+        
         playerSelection = prompt("What's your move?")
+
         let roundResult = Playround(playerSelection);
+
         console.log(roundResult);
+
         if(roundResult.includes('won')){
           playerScore++
         }else if(roundResult.includes('lost')){
           computerScore++
         }
+        document.getElementById('roundNumber').innerHTML = `Round number: ${i}`;
+        document.getElementById('playerScore').innerHTML = `Player score: ${playerScore}`;
+        document.getElementById('computerScore').innerHTML = `Computer score: ${computerScore}`;
       }
 
       if(playerScore > computerScore){
-        console.log('You defeated the computer!!')
+        console.log('You defeated the computer!!');
+        document.getElementById('finalResult').innerHTML = 'You defeated the computer!!';
+
       }else if(playerScore < computerScore){
-        console.log('You lost to the computer!!')
+        console.log('You lost to the computer!!');
+        document.getElementById('finalResult').innerHTML = 'You lost to the computer!!';
       }else{
-        console.log('it is a draw!!')
+        console.log('it is a draw!!');
+        document.getElementById('finalResult').innerHTML = 'it is a draw!!';
       }
 
     }
