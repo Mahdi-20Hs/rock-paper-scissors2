@@ -4,27 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- <script src="./script.js" defer></script> -->
+  <title>Rock-Paper-Scissors</title>
+  <script src="./script.js" defer></script>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <h1 class="header">Rock-Paper-Scissors</h1>
   <div class="main">
     <div class="game-board">
-      <h3>Round</h3>
-      <h3>Player Score</h3>
-      <h3>Com Score</h3>
+      <h3 class="round"></h3>
+      <h3 class="playerScore"></h3>
+      <h3 class="computerScore"></h3>
+      <h3 class="finalResult"></h3>
+      <button class="playAgain"><a href="./index.html">Play Again</a></button>
     </div>
     <div class="game">
       <h2>Choose your weapon</h2>
       <div class="cards">
-        <button class="rock">&#x270A;</button>
-        <button class="paper">&#x1F590;</button>
-        <button class="scissors">&#x270C;</button>
+        <button id="rock" class="card">&#x270A;</button>
+        <button id="paper" class="card">&#x1F590;</button>
+        <button id="scissors" class="card">&#x270C;</button>
       </div>
 
-      <button>Play</button>
+      <button id="playRound">Play</button>
       <p class="result"></p>
     </div>
   </div>
