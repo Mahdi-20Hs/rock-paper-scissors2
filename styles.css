@@ -1,0 +1,69 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(1, 1, 15);
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  padding: 20px;
+}
+
+.header{
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main{
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.game, .game-board{
+  color: white;
+  background-color: rgb(25, 25, 58);
+  padding: 20px;
+  border-radius: 10px;
+}
+.game-board{
+  flex: 1;
+  font-size: 30px;
+}
+.game-board h3{
+  margin-bottom: 40px;
+}
+.game{
+  flex: 3;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards{
+  display: flex;
+  gap: 20px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.game .cards button{
+  background-color: red;
+  padding: 30px;
+  font-size: 60px;
+  border: none;
+  border-radius: 10px;
+}
+
+.game button{
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(255, 196, 0);
+  padding: 25px;
+  font-size: 30px;
+}
