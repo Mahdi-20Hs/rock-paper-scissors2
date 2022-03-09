@@ -5,75 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./script.js" defer></script>
+  <!-- <script src="./script.js" defer></script> -->
 </head>
 <body>
+  <h1 class="header">Rock-Paper-Scissors</h1>
+  <div class="main">
+    <div class="game-board">
+      <h3>Round</h3>
+      <h3>Player Score</h3>
+      <h3>Com Score</h3>
+    </div>
+    <div class="game">
+      <h2>Choose your weapon</h2>
+      <div class="cards">
+        <div class="rock">&#x270A;</div>
+        <div class="paper">&#x1F590;</div>
+        <div class="scissors">&#x270C;</div>
+      </div>
 
-  <script>
-    function computerPlay(){
-      const moves = ['Rock', 'Paper', 'Scissors'];
-      return moves[Math.floor(Math.random() * 3)]
-    }
-
-    function Playround(playerSelection, computerSelection){
-      playerSelection = playerSelection.toLowerCase();
-      computerSelection = computerPlay().toLowerCase();
-
-      if(playerSelection === computerSelection){
-        return "it's a tie!"
-      }else if(
-        (playerSelection === 'rock' && computerSelection === 'scissors')||
-        (playerSelection === 'paper' && computerSelection === 'rock')||
-        (playerSelection === 'scissors' && computerSelection === 'paper')
-      ){
-        return `${playerSelection} beats ${computerSelection}. You won the round!`
-      }else{
-        return `${computerSelection} beats ${playerSelection}. You lost the round!`
-      }
-    }
-
-    function game(playerSelection){
-      debugger
-      let playerScore = 0;
-      let computerScore = 0;
-
-     
-      
-
-      for(let i = 1; i <= 5; i++){
-        
-        playerSelection = prompt("What's your move?")
-
-        let roundResult = Playround(playerSelection);
-
-        console.log(roundResult);
-
-        if(roundResult.includes('won')){
-          playerScore++
-        }else if(roundResult.includes('lost')){
-          computerScore++
-        }
-        document.getElementById('roundNumber').innerHTML = `Round number: ${i}`;
-        document.getElementById('playerScore').innerHTML = `Player score: ${playerScore}`;
-        document.getElementById('computerScore').innerHTML = `Computer score: ${computerScore}`;
-      }
-
-      if(playerScore > computerScore){
-        console.log('You defeated the computer!!');
-        document.getElementById('finalResult').innerHTML = 'You defeated the computer!!';
-
-      }else if(playerScore < computerScore){
-        console.log('You lost to the computer!!');
-        document.getElementById('finalResult').innerHTML = 'You lost to the computer!!';
-      }else{
-        console.log('it is a draw!!');
-        document.getElementById('finalResult').innerHTML = 'it is a draw!!';
-      }
-
-    }
-
-    game()
-  </script>
-  
+      <button>Play</button>
+      <p class="result"></p>
+    </div>
+  </div>
 </body>
 </html>
